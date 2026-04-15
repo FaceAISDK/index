@@ -6,8 +6,8 @@
     <link rel="icon" href="images/logo.svg" type="image/svg+xml">
     <title>Face Recognition SDK</title>
 
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/FaceAISDK/FaceAISDK.github.io@main/images/img2.webp" as="image">
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/FaceAISDK/FaceAISDK.github.io@main/images/img3.webp" as="image">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/FaceAISDK/index@main/images/img2.webp" as="image">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/FaceAISDK/index@main/images/img3.webp" as="image">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -15,13 +15,13 @@
         .active-lang-en .lang-zh { display: none; }
         .active-lang-en .lang-en { display: block; }
 
-        /* 2. 使用 CDN 链接作为 CSS 背景，减少骨干网波动影响 */
+        /* 修复点 2：修正 CSS 背景图中的 CDN 加速链接 */
         .hero-custom-bg {
             position: relative;
             z-index: 1;
             background-color: #0B4D46;
             background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-                             url('https://cdn.jsdelivr.net/gh/FaceAISDK/FaceAISDK.github.io@main/images/img2.webp');
+                             url('https://cdn.jsdelivr.net/gh/FaceAISDK/index@main/images/img2.webp');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -34,7 +34,7 @@
             z-index: -1;
             background-color: #0B4D46;
             background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-                             url('https://cdn.jsdelivr.net/gh/FaceAISDK/FaceAISDK.github.io@main/images/img3.webp');
+                             url('https://cdn.jsdelivr.net/gh/FaceAISDK/index@main/images/img3.webp');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -120,8 +120,8 @@
     function toggleLang() {
         const body = document.body;
         body.classList.toggle('active-lang-en');
-        document.title = body.classList.contains('active-lang-en')
-            ? "FaceAISDK-Offline Face Recognition"
+        document.title = body.classList.contains('active-lang-en') 
+            ? "FaceAISDK-Offline Face Recognition" 
             : "FaceAISDK-离线人脸识别SDK";
     }
 </script>
