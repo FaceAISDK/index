@@ -3,14 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
     <title>Face Recognition SDK</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .lang-en { display: none; }
         .active-lang-en .lang-zh { display: none; }
         .active-lang-en .lang-en { display: block; }
-        .hero-custom-bg { background-color: #0B4D46; }
+
+        /* 核心背景区域（默认显示 img2.jpg） */
+        .hero-custom-bg {
+            position: relative;
+            z-index: 1; /* 保证文字内容在伪元素背景之上 */
+            background-color: #0B4D46;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/img2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* 伪元素用于挂载 img3.jpg 并实现淡入淡出动画 */
+        .hero-custom-bg::before {
+            content: "";
+            position: absolute;
+            inset: 0; /* 充满整个 section 容器 */
+            z-index: -1; /* 置于底层 */
+            background-color: #0B4D46;
+            /* 此处路径请根据您的实际存放位置调整，如果您把 img3 放到了 images 文件夹则为 images/img3.jpg */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/img3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            animation: crossfadeBg 8s ease-in-out infinite; /* 6秒一个循环，每张图各占据约3秒 */
+        }
+
+        /* 淡入淡出关键帧动画 */
+        @keyframes crossfadeBg {
+            0%, 35% { opacity: 0; }    /* 0-2.1秒：隐藏img3，显示底层的img2 */
+            50%, 85% { opacity: 1; }   /* 3.0-5.1秒：显示img3，遮住img2 */
+            100% { opacity: 0; }       /* 6秒结束时：渐变隐去img3，恢复img2 */
+        }
+
         /* 平滑滚动效果 */
         html { scroll-behavior: smooth; }
     </style>
@@ -21,7 +55,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
             <div class="flex-shrink-0 flex items-center">
-                <img src="logo.svg" alt="Logo" class="h-8 w-auto mr-2">
+                <img src="images/logo.svg" alt="Logo" class="h-8 w-auto mr-2">
                 <span class="text-2xl font-bold text-blue-600">FaceAI SDK</span>
             </div>
             <div class="hidden md:flex space-x-8">
@@ -42,33 +76,48 @@
     </div>
 </nav>
 
-<section class="hero-custom-bg text-white py-32 px-4 text-center flex flex-col justify-between">
-    <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-6">
-            <span class="lang-zh">专业离线端侧人脸识别SDK</span>
-            <span class="lang-en">Professional On-device Offline Face Recognition SDK</span>
+<section class="hero-custom-bg text-white min-h-[90vh] px-4 text-center flex flex-col items-center">
+
+    <div class="flex-[1.5]"></div>
+
+    <div class="max-w-5xl mx-auto z-10">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-8 tracking-tight">
+            <span class="lang-zh text-shadow-sm">专业离线端侧人脸识别 SDK</span>
+            <span class="lang-en leading-tight block mt-2">Professional On-device Offline Face Recognition SDK</span>
         </h1>
-        <p class="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
-            <span class="lang-zh">Android  iOS 人脸检测 、人脸识别 、以及活体检测SDK</span>
-            <span class="lang-en">Android  iOS Face Detection 、Recognition 、Liveness Detection Anti Spoofing SDK</span>
+        <p class="text-[25px] md:text-[28px] text-white/80 font-light leading-relaxed">
+            <span class="lang-zh">Android & iOS 人脸检测、识别及活体检测 SDK</span>
+            <span class="lang-en">Android & iOS Face Detection, Recognition & Liveness SDK</span>
         </p>
+    </div>
+
+    <div class="h-14 md:h-20"></div>
+
+    <div class="z-10">
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="https://www.pgyer.com/faceVerify" target="_blank" rel="noopener noreferrer" class="lang-zh bg-transparent border border-white hover:bg-white hover:text-gray-900 text-white px-8 py-3 rounded-lg font-bold transition">
+            <a href="https://www.pgyer.com/faceVerify" target="_blank" rel="noopener noreferrer" class="lang-zh bg-white/50 border border-white hover:bg-white hover:text-gray-900 text-white px-8 py-3 rounded-lg font-bold transition">
                 立即体验 (Demo APK)
             </a>
-            <a href="https://play.google.com/store/apps/details?id=com.ai.face.verifyPub&hl=en" target="_blank" rel="noopener noreferrer" class="lang-en bg-transparent border border-white hover:bg-white hover:text-gray-900 text-white px-8 py-3 rounded-lg font-bold transition">
+            <a href="https://play.google.com/store/apps/details?id=com.ai.face.verifyPub&hl=en" target="_blank" rel="noopener noreferrer" class="lang-en bg-white/50 border border-white hover:bg-white hover:text-gray-900 text-white px-8 py-3 rounded-lg font-bold transition">
                 Try Demo APK
             </a>
-            <a href="https://github.com/FaceAISDK" target="_blank" rel="noopener noreferrer" class="bg-transparent border border-white hover:bg-white hover:text-gray-900 text-white px-8 py-3 rounded-lg font-bold transition">
+            <a href="https://github.com/FaceAISDK" target="_blank" rel="noopener noreferrer" class="bg-white/50 border border-white hover:bg-white hover:text-gray-900 text-white px-8 py-3 rounded-lg font-bold transition">
                 <span class="lang-zh">GitHub 源码</span><span class="lang-en">GitHub Source</span>
             </a>
         </div>
     </div>
 
-    <p class="mt-16 text-sm md:text-base text-gray-300 max-w-4xl mx-auto">
-        <span class="lang-zh">软件工程师集成SDK后可快速实现人脸识别功能，助力公司业务发展，减少投入支出</span>
-        <span class="lang-en">Software engineers can quickly implement facial recognition functionality after integrating the SDK, boosting company business development and reducing investment costs.</span>
-    </p>
+    <div class="flex-[3]"></div>
+
+    <div class="max-w-4xl mx-auto z-10 px-6">
+        <p class="text-[22px] md:text-[25px] text-white/70 font-light leading-relaxed border-t border-white/10 pt-8">
+            <span class="lang-zh">工程师集成 SDK 后可快速实现人脸识别功能，助力业务发展，减少研发投入</span>
+            <span class="lang-en italic">Fast integration, lower costs, better business.</span>
+        </p>
+    </div>
+
+    <div class="flex-1"></div>
+
 </section>
 
 
@@ -150,8 +199,6 @@
         </div>
     </div>
 </section>
-
-
 
 <section id="features" class="py-32 max-w-7xl mx-auto px-4">
     <h2 class="text-3xl font-bold text-center mb-12 text-[#0B4D46]">
