@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-title-zh="产品价格 - FaceAISDK" data-title-en="Pricing - FaceAISDK">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>产品价格 Pricing - FaceAISDK</title>
-    <meta name="description" content="FaceAISDK 产品授权价格与功能模块列表。SDK Openness and Pricing for FaceAISDK.">
+    <meta name="description" content="FaceAISDK 产品授权价格与功能模块列表。Explore FaceAISDK features, licensing, and pricing.">
+
+    <script src="language.js"></script>
 
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/FaceAISDK/index@main/images/logo.svg" type="image/svg+xml">
 
@@ -18,9 +20,11 @@
         .active-lang-en .lang-zh { display: none; }
         .active-lang-en .lang-en { display: block; }
         html { scroll-behavior: smooth; }
+        h1 { text-wrap: balance; }
+        #pdf-content table td { line-height: 1.55; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans active-lang-en">
+<body class="bg-gray-50 text-gray-800 font-sans">
 
 <nav class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,9 +50,9 @@
 <main id="pdf-content" class="max-w-6xl mx-auto px-4 py-12 md:py-16">
 
     <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
-        <h1 class="text-3xl font-bold text-[#0B4D46]">
+        <h1 class="text-3xl font-bold leading-tight tracking-tight text-[#0B4D46]">
             <span class="lang-zh">SDK开放程度与收费</span>
-            <span class="lang-en">SDK Openness & Pricing</span>
+            <span class="lang-en">SDK Features &amp; Pricing</span>
         </h1>
 
         <button id="download-btn" onclick="downloadPageAsPDF()" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg shadow-sm font-medium transition gap-2 cursor-pointer">
@@ -63,20 +67,20 @@
     <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 mb-10 text-gray-700 leading-relaxed">
         <p class="font-bold text-lg mb-4 text-blue-600">
             <span class="lang-zh">所有功能可免费试用以便验证是否符合你的业务需求！</span>
-            <span class="lang-en">All features can be tried for free to verify if they meet your business needs!</span>
+            <span class="lang-en">Try all features for free to see whether they meet your needs.</span>
         </p>
         <p class="mb-4">
-            <span class="lang-zh">授权需绑定App包名和打包签名SHA1，授权后指定的终端系统上使用<strong>不限终端数量，不限次数</strong>。</span>
-            <span class="lang-en">Authorization requires binding the App package name and packaging signature SHA1. Once authorized, usage on the specified terminal system has <strong>unlimited terminal quantities and unlimited times</strong>.</span>
+            <span class="lang-zh">授权需绑定 App 包名和打包签名 SHA-1，授权后指定的终端系统上使用<strong>不限终端数量，不限次数</strong>。</span>
+            <span class="lang-en">Licensing is tied to your app's package name and signing certificate SHA-1. Once licensed, the SDK can be used on <strong>unlimited devices, with no usage limits</strong> on the specified operating system.</span>
         </p>
         <p class="mb-6">
             <span class="lang-zh">提供快速接入对接指引，一次性离线激活，助力业务快速迭代上线，做大做强！</span>
-            <span class="lang-en">We provide quick integration guidelines and one-time offline activation, helping your business iterate, launch quickly, and grow stronger!</span>
+            <span class="lang-en">We provide a quick-start guide and one-time offline activation to help you integrate and launch faster.</span>
         </p>
 
         <div class="flex flex-col sm:flex-row gap-6 text-sm bg-gray-50 p-4 rounded border border-gray-100">
             <div>
-                <span class="text-gray-500 block mb-1"><span class="lang-zh">更新时间</span><span class="lang-en">Updated</span></span>
+                <span class="text-gray-500 block mb-1"><span class="lang-zh">更新时间</span><span class="lang-en">Last Updated</span></span>
                 <span class="font-medium">2026-07-15</span>
             </div>
             <div>
@@ -99,7 +103,7 @@
                         <span class="lang-zh">SDK 功能模块</span><span class="lang-en">SDK Module</span>
                     </th>
                     <th scope="col" class="px-6 py-4 text-center text-sm font-bold text-gray-900 whitespace-nowrap w-32">
-                        <span class="lang-zh">费用</span><span class="lang-en">Pricing</span>
+                        <span class="lang-zh">费用</span><span class="lang-en">Price</span>
                     </th>
                     <th scope="col" class="px-6 py-4 text-left text-sm font-bold text-gray-900 min-w-[320px]">
                         <span class="lang-zh">功能描述</span><span class="lang-en">Description</span>
@@ -116,7 +120,7 @@
                     </td>
                     <td class="px-6 py-4 text-sm text-gray-600">
                         <span class="lang-zh">1. 静态人脸图1:1比对 &nbsp;2. 人脸检测人脸裁剪录入人脸</span>
-                        <span class="lang-en">1. Static face image 1:1 comparison. <br>2. Face detection, face cropping, and face enrollment.</span>
+                        <span class="lang-en">1. One-to-one comparison of static face images.<br>2. Face detection, cropping, and enrollment.</span>
                     </td>
                 </tr>
                 <tr class="hover:bg-gray-50 transition">
@@ -128,7 +132,7 @@
                     </td>
                     <td class="px-6 py-4 text-sm text-gray-600">
                         <span class="lang-zh">包含动作活体、静默活体和炫彩活体可选</span>
-                        <span class="lang-en">Includes optional motion-based liveness, silent liveness, and flashing color liveness detection.</span>
+                        <span class="lang-en">Options include motion-based, silent, and color-flash liveness detection.</span>
                     </td>
                 </tr>
                 <tr class="hover:bg-gray-50 transition">
@@ -140,7 +144,7 @@
                     </td>
                     <td class="px-6 py-4 text-sm text-gray-600">
                         <span class="lang-zh">通过相机动态采集人脸数据和指定的人脸特征相似度对比</span>
-                        <span class="lang-en">Dynamically capture face data via camera and compare similarity with specified face features.</span>
+                        <span class="lang-en">Capture face data with the camera and compare it with specified face features.</span>
                     </td>
                 </tr>
                 <tr class="hover:bg-gray-50 transition">
@@ -151,8 +155,8 @@
                         <span class="lang-zh">5000 元</span><span class="lang-en">$1000</span>
                     </td>
                     <td class="px-6 py-4 text-sm text-gray-600">
-                        <span class="lang-zh">通过相机动态采集人脸搜索识别，如门禁功能；还需绑定设备型号</span>
-                        <span class="lang-en">Dynamically capture face data via camera for search and recognition (e.g., access control features); also requires binding device models.</span>
+                        <span class="lang-zh">通过相机动态采集人脸搜索识别，如门禁功能；<strong class="font-semibold text-blue-600">还需绑定设备型号</strong></span>
+                        <span class="lang-en">Capture faces with a camera for search and recognition, such as access control. <strong class="font-semibold text-blue-600">Device model binding is also required.</strong></span>
                     </td>
                 </tr>
                 <tr class="hover:bg-gray-50 transition">
@@ -164,7 +168,7 @@
                     </td>
                     <td class="px-6 py-4 text-sm text-gray-600">
                         <span class="lang-zh">检测并搜索图片中的人脸和相似度</span>
-                        <span class="lang-en">Detect and search faces within images and evaluate similarity.</span>
+                        <span class="lang-en">Detect faces in images, search for matches, and return similarity scores.</span>
                     </td>
                 </tr>
                 <tr class="hover:bg-gray-50 transition">
@@ -175,8 +179,8 @@
                         <span class="lang-zh">按需评估</span><span class="lang-en">On Demand</span>
                     </td>
                     <td class="px-6 py-4 text-sm text-gray-600">
-                        <span class="lang-zh">如果试用当前的SDK不能满足业务需求</span>
-                        <span class="lang-en">If the current SDK trial does not meet your specific business needs.</span>
+                        <span class="lang-zh">如果试用当前的 SDK 不能满足业务需求</span>
+                        <span class="lang-en">Custom development for requirements beyond the standard SDK.</span>
                     </td>
                 </tr>
                 </tbody>
@@ -186,8 +190,8 @@
 
     <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r">
         <p class="text-sm text-blue-800">
-            <span class="lang-zh">充分试用后需要采购或咨询优惠请添加微信或邮件说明，并附上 <strong>App包名</strong>、<strong>签名SHA1</strong> 和 <strong>简单使用场景介绍</strong>。</span>
-            <span class="lang-en">After thorough trial, if you need to purchase or inquire about discounts, please contact us via WeChat or email with your <strong>App package name</strong>, <strong>signature SHA1</strong>, and a <strong>brief description of your usage scenario</strong>.</span>
+            <span class="lang-zh">充分试用后需要采购或咨询优惠请添加微信或邮件说明，并附上 <strong>App 包名</strong>、<strong>签名 SHA-1</strong> 和 <strong>简单使用场景介绍</strong>。</span>
+            <span class="lang-en">After trying the SDK, contact us via WeChat or email for a quote or discount. Include your <strong>app package name</strong>, <strong>signing certificate SHA-1</strong>, and a <strong>brief description of your use case</strong>.</span>
         </p>
     </div>
 
@@ -195,23 +199,11 @@
 
 <footer class="bg-white border-t py-12 mt-auto">
     <div class="max-w-7xl mx-auto px-4 text-center">
-        <p class="text-gray-500 mb-4">© 2026 FaceAISDK</p>
+        <p class="text-gray-500 mb-4">© 2024-2026 FaceAISDK</p>
     </div>
 </footer>
 
 <script>
-    // 语言切换函数
-    function toggleLang() {
-        const body = document.body;
-        body.classList.toggle('active-lang-en');
-
-        if (body.classList.contains('active-lang-en')) {
-            document.title = "Pricing - FaceAISDK";
-        } else {
-            document.title = "产品价格 - FaceAISDK";
-        }
-    }
-
     // 核心功能：抓取当前页面生成 PDF 并下载（截图时完美隐藏按钮）
     async function downloadPageAsPDF() {
         const { jsPDF } = window.jspdf;
@@ -222,7 +214,7 @@
         btn.style.visibility = 'hidden';
 
         // 获取当前激活的语言状态，用作保存的文件名
-        const isEn = document.body.classList.contains('active-lang-en');
+        const isEn = document.documentElement.lang === 'en';
         const filename = isEn ? "FaceAISDK_Pricing.pdf" : "FaceAISDK_产品报价单.pdf";
 
         try {
